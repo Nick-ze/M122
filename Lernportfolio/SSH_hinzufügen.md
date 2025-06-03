@@ -2,6 +2,8 @@
 
 ## Das Problem
 Ich wollte meine VM mit SSH verbinden damit ich auch code direkt aus der konsole rauskopieren kann und ich hatte auch das Problem das ich nicht die richtige tastatur verwenden konnte. 
+## Wie verbindet man jetzt?
+ssh -l nick 192.168.56.1
 ## Lösung 
 Ich habe dann nachgefragt und dann haben wir es mit SSH verbunden da dies beide Probleme löst. Folgendes haben wir in der konsole gemacht (ssh -l nick 192.168.56.1 ). 
 

@@ -1,0 +1,2 @@
+# Script ausführen
+./datei.sh

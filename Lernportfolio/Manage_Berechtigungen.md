@@ -1,0 +1,169 @@
+# Berechtigungen 03.06.2025
+nick@UbuntuSchool122:~$ ls -l
+total 24
+-rw-rw-r-- 1 nick nick 333 Jun  3 12:23 example.sh
+-rw-rw-r-- 1 nick nick   9 May 27 13:48 test
+-rw-rw-r-- 1 nick nick 334 Jun  3 12:22 testScriptArray.sh
+-rw-rw-r-- 1 nick nick  35 Jun  3 12:02 testScript.sh
+-rw-rw-r-- 1 nick nick  16 May 27 12:00 test.tsx
+-rw-rw-r-- 1 nick nick  22 May 27 12:23 TestWO
+nick@UbuntuSchool122:~$ apropos execute
+cron (8)             - daemon to execute scheduled commands (Vixie Cron)
+exec (3)             - execute a file
+execl (3)            - execute a file
+execle (3)           - execute a file
+execlp (3)           - execute a file
+execv (3)            - execute a file
+execve (2)           - execute program
+execveat (2)         - execute program relative to a directory file descriptor
+execvp (3)           - execute a file
+execvpe (3)          - execute a file
+fexecve (3)          - execute program specified via file descriptor
+invoke-rc.d (8)      - executes System-V style init script actions
+proc_pid_syscall (5) - currently executed system call
+sg (1)               - execute command as different group ID
+spu_run (2)          - execute an SPU context
+sudo (8)             - execute a command as another user
+sudoedit (8)         - execute a command as another user
+system (3)           - execute a shell command
+systemd-inhibit (1)  - Execute a program with an inhibition lock taken
+watch (1)            - execute a program periodically, showing output fullscreen
+xargs (1)            - build and execute command lines from standard input
+nick@UbuntuSchool122:~$ apropos permision
+permision: nothing appropriate.
+nick@UbuntuSchool122:~$ apropos permission
+access (2)           - check user's permissions for a file
+chmod (2)            - change permissions of a file
+eaccess (3)          - check effective user's permissions for a file
+euidaccess (3)       - check effective user's permissions for a file
+faccessat (2)        - check user's permissions for a file
+faccessat2 (2)       - check user's permissions for a file
+fchmod (2)           - change permissions of a file
+fchmodat (2)         - change permissions of a file
+ioperm (2)           - set port input/output permissions
+nick@UbuntuSchool122:~$ chmod /.example.sh
+chmod: missing operand after ‘/.example.sh’
+Try 'chmod --help' for more information.
+nick@UbuntuSchool122:~$ chmod --help
+Usage: chmod [OPTION]... MODE[,MODE]... FILE...
+  or:  chmod [OPTION]... OCTAL-MODE FILE...
+  or:  chmod [OPTION]... --reference=RFILE FILE...
+Change the mode of each FILE to MODE.
+With --reference, change the mode of each FILE to that of RFILE.
+
+  -c, --changes          like verbose but report only when a change is made
+  -f, --silent, --quiet  suppress most error messages
+  -v, --verbose          output a diagnostic for every file processed
+      --no-preserve-root  do not treat '/' specially (the default)
+      --preserve-root    fail to operate recursively on '/'
+      --reference=RFILE  use RFILE's mode instead of specifying MODE values.
+                         RFILE is always dereferenced if a symbolic link.
+  -R, --recursive        change files and directories recursively
+      --help        display this help and exit
+      --version     output version information and exit
+
+Each MODE is of the form '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/chmod>
+or available locally via: info '(coreutils) chmod invocation'
+nick@UbuntuSchool122:~$ chmod 777 /.example.sh
+chmod: cannot access '/.example.sh': No such file or directory
+nick@UbuntuSchool122:~$
+nick@UbuntuSchool122:~$ chmod 777 example.sh
+nick@UbuntuSchool122:~$ ls -l
+total 24
+-rwxrwxrwx 1 nick nick 333 Jun  3 12:23 example.sh
+-rw-rw-r-- 1 nick nick   9 May 27 13:48 test
+-rw-rw-r-- 1 nick nick 334 Jun  3 12:22 testScriptArray.sh
+-rw-rw-r-- 1 nick nick  35 Jun  3 12:02 testScript.sh
+-rw-rw-r-- 1 nick nick  16 May 27 12:00 test.tsx
+-rw-rw-r-- 1 nick nick  22 May 27 12:23 TestWO
+nick@UbuntuSchool122:~$ chmod 764 example.sh
+nick@UbuntuSchool122:~$ ls -l
+total 24
+-rwxrw-r-- 1 nick nick 333 Jun  3 12:23 example.sh
+-rw-rw-r-- 1 nick nick   9 May 27 13:48 test
+-rw-rw-r-- 1 nick nick 334 Jun  3 12:22 testScriptArray.sh
+-rw-rw-r-- 1 nick nick  35 Jun  3 12:02 testScript.sh
+-rw-rw-r-- 1 nick nick  16 May 27 12:00 test.tsx
+-rw-rw-r-- 1 nick nick  22 May 27 12:23 TestWO
+nick@UbuntuSchool122:~$ chmod 700 example.sh
+nick@UbuntuSchool122:~$ ls -l
+total 24
+-rwx------ 1 nick nick 333 Jun  3 12:23 example.sh
+-rw-rw-r-- 1 nick nick   9 May 27 13:48 test
+-rw-rw-r-- 1 nick nick 334 Jun  3 12:22 testScriptArray.sh
+-rw-rw-r-- 1 nick nick  35 Jun  3 12:02 testScript.sh
+-rw-rw-r-- 1 nick nick  16 May 27 12:00 test.tsx
+-rw-rw-r-- 1 nick nick  22 May 27 12:23 TestWO
+nick@UbuntuSchool122:~$ ./example.sh
+1
+2
+3
+4
+5
+6
+7
+8
+9
+nick@UbuntuSchool122:~$ nano /example.sh
+nick@UbuntuSchool122:~$ ls -l
+total 24
+-rwx------ 1 nick nick 333 Jun  3 12:23 example.sh
+-rw-rw-r-- 1 nick nick   9 May 27 13:48 test
+-rw-rw-r-- 1 nick nick 334 Jun  3 12:22 testScriptArray.sh
+-rw-rw-r-- 1 nick nick  35 Jun  3 12:02 testScript.sh
+-rw-rw-r-- 1 nick nick  16 May 27 12:00 test.tsx
+-rw-rw-r-- 1 nick nick  22 May 27 12:23 TestWO
+nick@UbuntuSchool122:~$ nano example.sh
+nick@UbuntuSchool122:~$ touch mathexample
+nick@UbuntuSchool122:~$ nano mathexample
+nick@UbuntuSchool122:~$ ./mathexample.sh
+-bash: ./mathexample.sh: Permission denied
+nick@UbuntuSchool122:~$ ls -l
+total 28
+-rwx------ 1 nick nick 333 Jun  3 12:23 example.sh
+-rw-rw-r-- 1 nick nick   0 Jun  3 13:41 mathexample
+-rw-rw-r-- 1 nick nick  78 Jun  3 14:20 mathexample.sh
+-rw-rw-r-- 1 nick nick   9 May 27 13:48 test
+-rw-rw-r-- 1 nick nick 334 Jun  3 12:22 testScriptArray.sh
+-rw-rw-r-- 1 nick nick  35 Jun  3 12:02 testScript.sh
+-rw-rw-r-- 1 nick nick  16 May 27 12:00 test.tsx
+-rw-rw-r-- 1 nick nick  22 May 27 12:23 TestWO
+nick@UbuntuSchool122:~$ chmod 710 mathexample.sh
+nick@UbuntuSchool122:~$ ./mathexample.sh
+Chooose number to multiply by 2
+3
+./mathexample.sh: line 3: var: command not found
+var
+nick@UbuntuSchool122:~$ nano mathexample.sh
+nick@UbuntuSchool122:~$ ./mathexample.sh
+Chooose number to multiply by 2
+2
+./mathexample.sh: line 3: var: command not found
+
+nick@UbuntuSchool122:~$ nano mathexample.sh
+nick@UbuntuSchool122:~$ ./mathexample.sh
+Chooose number to multiply by 2
+2
+./mathexample.sh: line 3: var: command not found
+now your number is:
+nick@UbuntuSchool122:~$ nano mathexample.sh
+nick@UbuntuSchool122:~$ ./mathexample.sh
+Chooose number to multiply by 2
+2
+./mathexample.sh: line 3: var: command not found
+now your number is:
+nick@UbuntuSchool122:~$ nano mathexample.sh
+nick@UbuntuSchool122:~$ ./mathexample.sh
+Chooose number to multiply by 2
+2
+./mathexample.sh: line 3: var: command not found
+
+nick@UbuntuSchool122:~$ nano mathexample.sh
+nick@UbuntuSchool122:~$ ./mathexample.sh
+Chooose number to multiply by 2
+2
+4
+nick@UbuntuSchool122:~$ ./mathexample.sh

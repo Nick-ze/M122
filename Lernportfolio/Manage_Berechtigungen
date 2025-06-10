@@ -1,4 +1,6 @@
-# Berechtigungen 03.06.2025
+Berechtigungen 03.06.2025
+
+
 nick@UbuntuSchool122:~$ ls -l
 total 24
 -rw-rw-r-- 1 nick nick 333 Jun  3 12:23 example.sh

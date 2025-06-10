@@ -1,0 +1,2 @@
+# Datei finden
+locate Dateiname
